@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS login_transporte;
 USE login_transporte;
 
 -- Criar a tabela de usuários
-CREATE TABLE IF NOT EXISTS usuario (
+CREATE TABLE IF NOT EXISTS users (
     id_usuario INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
     login VARCHAR(100) NOT NULL UNIQUE,

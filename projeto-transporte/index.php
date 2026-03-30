@@ -103,8 +103,14 @@ input{
                         Senha atualizada com sucesso!
                     </div>
                 <?php endif; ?>
+
+                <?php if(isset($_GET['status']) && $_GET['status'] == 'mistake'): ?>
+                    <div class="alert alert-danger text-center py-2" style="font-size: 14px;">
+                        Erro: Senha ou Email inválidos!
+                    </div>
+                <?php endif; ?>
        
-        <img class="logo" src="logo.jpeg" alt="Logo Rota Certa">
+                <img class="logo" src="logo.jpeg" alt="Logo Rota Certa">
 
         <form action="login.php" method="POST">
             <label>E-mail</label>
