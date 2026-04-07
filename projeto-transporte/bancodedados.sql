@@ -15,5 +15,5 @@ CREATE TABLE IF NOT EXISTS users (
 USE login_transporte;
 
 -- Inserindo os dados da Mirly
-INSERT INTO usuario (nome, login, senha) 
+INSERT INTO users (nome, login, senha) 
 VALUES ('Mirly', 'Mirly2@seduc.ce.gov.br', '202cb962ac59075b964b07152d234b70');

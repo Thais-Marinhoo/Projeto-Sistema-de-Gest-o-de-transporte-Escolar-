@@ -18,10 +18,30 @@ body{
     color:white;
 }
 
-.topo{
-    padding:18px 30px;
-    font-weight:600;
-    font-size:20px;
+.modal-fake {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none; /* Escondido por padrão */
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+/* Quando o ID do modal for o "alvo" da URL, ele aparece */
+.modal-fake:target {
+    display: flex;
+}
+
+/* Ajuste do botão fechar no topo */
+.btn-fechar {
+    float: right;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
 }
 
 .container-login{
@@ -90,9 +110,6 @@ input{
 
 <body>
 
-<div class="topo">
-    Sistema de Transporte Escolar
-</div>
 
 <div class="container-login">
     <div class="card-login">
@@ -106,7 +123,7 @@ input{
 
                 <?php if(isset($_GET['status']) && $_GET['status'] == 'mistake'): ?>
                     <div class="alert alert-danger text-center py-2" style="font-size: 14px;">
-                        Erro: Senha ou Email inválidos!
+                        Senha ou Email inválidos!
                     </div>
                 <?php endif; ?>
        
@@ -122,26 +139,30 @@ input{
             <button class="btn-login">Login</button>
         </form>
 
+        <!-- Link que antes era index.php?show_reset=true agora aponta para o ID -->
         <div class="esqueceu">
-            Esqueceu sua senha? <a href="index.php?show_reset=true">Clique aqui</a>
+            Esqueceu sua senha? <a href="#modalReset">Clique aqui</a>
         </div>
 
-        <!-- FORMULÁRIO DE ALTERAÇÃO (APARECE SÓ AO CLICAR) -->
-        <?php if (isset($_GET['show_reset'])): ?>
-            <div class="mt-4 p-3 border rounded bg-light" style="font-size: 14px;">
-                <h6 class="fw-bold text-center">Alterar Senha do Sistema</h6>
+        <!-- ESTRUTURA DO MODAL SEM JS -->
+        <div id="modalReset" class="modal-fake">
+            <div class="card-login">
+                <a href="#" class="btn-fechar">&times;</a>
+                <h5 class="fw-bold text-center">Alterar Senha</h5>
+                <hr>
+                
                 <form action="alterar.php" method="POST">
-                    <div class="mb-2">
-                        <input type="email" name="email_reset" class="form-control form-control-sm mb-2" placeholder="Confirme seu e-mail" required>
-                    </div>
-                   <div class="mb-2">
-                        <input type="password" name="nova_senha" class="form-control form-control-sm mb-2" placeholder="Nova senha" required>
-                    </div>
-                    <button type="submit" class="btn btn-sm btn-warning w-100 fw-bold">Salvar Nova Senha</button>
-                    <a href="index.php" class="btn btn-sm btn-link d-block text-center mt-1 text-muted">Cancelar</a>
+                    <label>Confirme seu e-mail</label>
+                    <input type="email" name="email_reset" required>
+
+                    <label>Nova senha</label>
+                    <input type="password" name="nova_senha" required>
+
+                    <button class="btn-login">Salvar Nova Senha</button>
+                    <a href="#" class="btn btn-sm btn-link d-block text-center mt-3 text-muted">Cancelar</a>
                 </form>
             </div>
-        <?php endif; ?>
+        </div>
 
     </div>
 </div>
