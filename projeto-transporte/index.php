@@ -17,7 +17,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color:white;
 }
-
+/*CSS para funcionamento do MODAL*/
 .modal-fake {
     position: fixed;
     top: 0;
@@ -35,6 +35,7 @@ body{
 .modal-fake:target {
     display: flex;
 }
+/*FIM do CSS para o modal*/
 
 /* Ajuste do botão fechar no topo */
 .btn-fechar {
