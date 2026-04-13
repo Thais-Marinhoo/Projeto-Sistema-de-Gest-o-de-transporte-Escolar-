@@ -21,6 +21,11 @@ if (!$result) {
     die("Erro na consulta: " . mysqli_error($conexao));
 }
 
+//Pesquisa no QUERY se o que foi digitado realmente existe, Result é o resultado da QUERY
+$query2 = "SELECT id_admin, login FROM admin WHERE login = '$email' AND senha = MD5('$senha')";
+$result2 = mysqli_query($conexao, $query2);
+
+
 
 $row = mysqli_num_rows($result);
 

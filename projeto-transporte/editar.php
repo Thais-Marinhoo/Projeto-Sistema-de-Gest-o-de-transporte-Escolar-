@@ -54,13 +54,9 @@ function busca_conta($conexao, $id) {
 
                                     <div class="col-6 mb-3">
                                         <label class="text-muted">Email:</label>
-                                        <input type="email" name="name" class="form-control" value="<?= $conta['login'] ?>" required>
+                                        <input type="email" name="login" class="form-control" value="<?= $conta['login'] ?>" required>
                                     </div>
 
-                                    <div class="col-6 mb-3">
-                                        <label class="text-muted">Senha:</label>
-                                        <input type="password" name="senha" class="form-control" value="<?= $conta['senha'] ?>" required>
-                                    </div>
 
                                 </div>
 

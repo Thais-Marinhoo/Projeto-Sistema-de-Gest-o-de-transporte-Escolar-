@@ -35,6 +35,7 @@ include "telaadminback.php";
      <div class="container mt-4">
 
         <h2 class="mt-4">Contas Cadastradas:</h2>
+        <h5 class="mt-4">(A senha é alterada pelo usuário)</h5>
 
         <!-- TABELA -->
          <div class="container">
@@ -46,7 +47,6 @@ include "telaadminback.php";
                         <thead>
                             <tr>
                                 <th>Email</th>
-                                <th>Senha</th>
                                 <th>Opções</th>
                             </tr>
                         </thead>
@@ -57,11 +57,10 @@ include "telaadminback.php";
                             <?php foreach ($lista_contas as $conta): ?>
                                 <tr>
                                     <td><?= $conta['login']; ?></td>
-                                    <td><?= $conta['senha']; ?></td>
                                     <td>
                                         <a class="btn btn-primary btn-sm"
                                         href="editar.php?id_usuario=<?= $conta['id_usuario']; ?>">
-                                        Editar
+                                        Editar Email
                                     </a>
                                     
                                     <a class="btn btn-danger btn-sm"

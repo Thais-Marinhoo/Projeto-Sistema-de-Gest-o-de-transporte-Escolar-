@@ -15,7 +15,7 @@
     <div class="container-login">
         <div class="card-login">
             
-                <!-- ALERTA DE SUCESSO -->
+                <!-- ALERTA DE SUCESSO E ERRO -->
                 <?php if(isset($_GET['status']) && $_GET['status'] == 'sucesso'): ?>
                     <div class="alert alert-success text-center py-2" style="font-size: 14px;">
                         Senha atualizada com sucesso!
