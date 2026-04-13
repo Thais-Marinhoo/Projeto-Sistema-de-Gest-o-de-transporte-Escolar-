@@ -1,4 +1,4 @@
--- Criar o banco de dados (opcional, caso ainda não tenha criado no servidor)
+-- Criar o banco de dados
 CREATE DATABASE IF NOT EXISTS login_transporte;
 USE login_transporte;
 
@@ -13,10 +13,6 @@ CREATE TABLE IF NOT EXISTS users (
 -- Garante que estamos usando o banco correto
 USE login_transporte;
 
--- Inserindo os dados da Mirly
-INSERT INTO users (login, senha) 
-VALUES ('Mirly2@seduc.ce.gov.br', '202cb962ac59075b964b07152d234b70');
-
 --Nova Tabela unitária para o usuário ADMIN
 CREATE TABLE IF NOT EXISTS admin (
     id_admin INT NOT NULL AUTO_INCREMENT,
@@ -25,4 +21,4 @@ CREATE TABLE IF NOT EXISTS admin (
     PRIMARY KEY (id_admin)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO admin (login, senha) VALUES ('admin.stge20@seduc.ce.gov.br', 'eeep-adm-sgte-seduc');
+INSERT INTO admin (login, senha) VALUES ('admin.stge20@seduc.ce.gov.br', 'ac179c1b3516a0e107f02c468d72d79c'); --eeep-adm-stge-seduc é a senha
