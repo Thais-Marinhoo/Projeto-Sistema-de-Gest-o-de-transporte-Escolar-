@@ -28,7 +28,7 @@
                         </div>
                     <?php endif; ?>
                     
-                    <img class="logo" src="logo.jpeg" alt="Logo Rota Certa">
+                    <img class="logo" src="logo.png" alt="Logo Rota Certa">
                     
                     <form action="login.php" method="POST">
                         <label>E-mail</label>
