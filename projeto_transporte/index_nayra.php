@@ -17,14 +17,14 @@ body{
 
 .container{
     background:#102f52;
-    padding:50px;
+    padding:30px;
     border-radius:10px;
-    width:350px;
+    width:300px;
     text-align:center;
 }
 
 .logo{
-    width:200px;
+    width:120px;
     margin-bottom:15px;
 }
 
@@ -52,20 +52,17 @@ input{
     border-radius:6px;
     cursor:pointer;
     font-weight:bold;
-    font-size:15px;
 }
 
 .links{
     margin-top:10px;
-    font-size:20px;
+    font-size:14px;
     color:#fff;
 }
 
 .links a{
     color:#f4c430;
     text-decoration:none;
-    font-weight:bold;
-    cursor:pointer;
 }
 
 .popup{
@@ -108,39 +105,48 @@ input{
 <body>
 
 <div class="container">
-    <img class="logo" src="logo.png" alt="Logo Rota Certa">
 
-    <form action="login.php" method="POST">
-        <label>E-mail</label>
-        <input type="email" name="email" required>
+<img class="logo" src="logo.png" alt="Logo Rota Certa">
 
-        <label>Senha</label>
-        <input type="password" name="senha" required>
+<form action="login.php" method="POST">
 
-        <div class="links">
-            Esqueceu sua senha?
-            <a href="#" onclick="abrirPopup(); return false;">Clique aqui</a>
-        </div>
+<label>E-mail</label>
+<input type="email" name="email" required>
 
-        <button class="btn-login">Login</button>
-    </form>
+<label>Senha</label>
+<input type="password" name="senha" required>
+
+<div class="links">
+Esqueceu sua senha?
+<a href="#" onclick="abrirPopup(); return false;">Clique aqui</a>
+</div>
+
+<button class="btn-login">Login</button>
+
+</form>
+
+<div class="links">
+Não tem uma conta?
+<a href="cadastro.php">Cadastre aqui</a>
+</div>
+
 </div>
 
 <div class="popup" id="popup">
-    <div class="popup-content">
-        <h3>Recuperar senha</h3>
-        <input type="email" placeholder="Digite seu e-mail">
-        <button class="close" onclick="fecharPopup()">Enviar</button>
-    </div>
+<div class="popup-content">
+<h3>Recuperar senha</h3>
+<input type="email" placeholder="Digite seu e-mail">
+<button class="close" onclick="fecharPopup()">Enviar</button>
+</div>
 </div>
 
 <script>
 function abrirPopup(){
-    document.getElementById("popup").style.display = "flex";
+document.getElementById("popup").style.display = "flex";
 }
 
 function fecharPopup(){
-    document.getElementById("popup").style.display = "none";
+document.getElementById("popup").style.display = "none";
 }
 </script>
 
