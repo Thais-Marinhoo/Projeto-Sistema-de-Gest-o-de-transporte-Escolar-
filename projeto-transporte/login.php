@@ -12,30 +12,30 @@ if (empty($_POST['email']) || empty($_POST['senha'])) {
 $email = mysqli_real_escape_string($conexao, $_POST['email']);
 $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 
-//Pesquisa no QUERY se o que foi digitado realmente existe, Result é o resultado da QUERY
-$query = "SELECT id_usuario, login FROM users WHERE login = '$email' AND senha = MD5('$senha')";
-$result = mysqli_query($conexao, $query);
+// 1. TENTA BUSCAR NA TABELA ADMIN
+$query_admin = "SELECT id_admin, login FROM admin WHERE login = '$email' AND senha = MD5('$senha')";
+$result_admin = mysqli_query($conexao, $query_admin);
 
-//Auto explicativo
-if (!$result) {
-    die("Erro na consulta: " . mysqli_error($conexao));
-}
-
-//Pesquisa no QUERY se o que foi digitado realmente existe, Result é o resultado da QUERY
-$query2 = "SELECT id_admin, login FROM admin WHERE login = '$email' AND senha = MD5('$senha')";
-$result2 = mysqli_query($conexao, $query2);
-
-
-
-$row = mysqli_num_rows($result);
-
-if ($row == 1) {
+if (mysqli_num_rows($result_admin) == 1) {
     $_SESSION['email'] = $email;
-    header('Location: painel.php');
-    exit();
-} else {
-    $_SESSION['nao_autenticado'] = true;
-    header('Location: index.php?status=mistake');
+    $_SESSION['perfil'] = 'admin'; // Opcional: para saber que é admin nas outras páginas
+    header('Location: admin/telaadmin.php'); // Redireciona para tela de Admin
     exit();
 }
+
+// 2. SE NÃO FOR ADMIN, TENTA BUSCAR NA TABELA USERS
+$query_user = "SELECT id_usuario, login FROM users WHERE login = '$email' AND senha = MD5('$senha')";
+$result_user = mysqli_query($conexao, $query_user);
+
+if (mysqli_num_rows($result_user) == 1) {
+    $_SESSION['email'] = $email;
+    $_SESSION['perfil'] = 'usuario';
+    header('Location: painel.php'); // Redireciona para tela de Usuário comum
+    exit();
+} 
+
+// 3. SE NÃO ACHOU EM NENHUMA DAS DUAS
+$_SESSION['nao_autenticado'] = true;
+header('Location: index.php?status=mistake');
+exit();
 ?>

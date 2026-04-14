@@ -21,4 +21,4 @@ CREATE TABLE IF NOT EXISTS admin (
     PRIMARY KEY (id_admin)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO admin (login, senha) VALUES ('admin.stge20@seduc.ce.gov.br', 'ac179c1b3516a0e107f02c468d72d79c'); --eeep-adm-stge-seduc é a senha
+INSERT INTO admin (login, senha) VALUES ('admin.stge20@seduc.ce.gov.br', MD5('eeep-adm-stge-seduc')); --eeep-adm-stge-seduc é a senha

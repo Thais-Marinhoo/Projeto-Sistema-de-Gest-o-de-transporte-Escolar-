@@ -9,7 +9,7 @@ include "telaadminback.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Contas - Tela do Administrador</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
         <!--Inicio da barra nav pq sinceramente n sei organizar-->
@@ -19,7 +19,7 @@ include "telaadminback.php";
             <ul class="nav justify-content-center">
             
             <li class="nav-item">
-                <a class="navbar-brand btn btn-primary btn-sm" href="index.php">Voltar</a>
+                <a class="navbar-brand btn btn-primary btn-sm" href="../index.php">Voltar</a>
             </li>
 
             <li class="nav-item">
