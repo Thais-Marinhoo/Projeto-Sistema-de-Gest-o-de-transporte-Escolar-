@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'conexao.php';
+include '../conexao.php';
 
 // Busca dados da conta CORRIGIR POIS SALVA COM ELA COMO MD5 (pegar de outro cód exemplo de decodificar)
 $conta = busca_conta($conexao, $_GET['id_usuario']);
