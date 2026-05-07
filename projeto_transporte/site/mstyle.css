@@ -100,3 +100,43 @@ logo-area{
     display:flex;
     align-items:center;
 }
+.tabela-alunos{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.tabela-alunos th{
+    background:#0b2c5f;
+    color:#fff;
+    padding:12px;
+}
+
+.tabela-alunos td{
+    padding:10px;
+}
+
+.tabela-alunos input,
+.tabela-alunos select{
+    width:100%;
+    padding:8px;
+}
+
+.btn-add{
+    background:#17a2b8;
+    color:#fff;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.btn-salvar{
+    background:#ffc107;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
