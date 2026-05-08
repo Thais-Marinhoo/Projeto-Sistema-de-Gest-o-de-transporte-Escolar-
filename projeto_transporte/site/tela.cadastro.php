@@ -10,7 +10,7 @@ if(!isset($_SESSION['email'])){
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro em Lote - Rota Certa</title>
+    <title>Cadastro Alunos - Rota Certa</title>
 
     <!-- Seu CSS -->
     <link rel="stylesheet" href="mstyle.css">
@@ -25,7 +25,7 @@ if(!isset($_SESSION['email'])){
 
 <div class="conteudo">
 
-    <h1 class="titulo">Cadastro de Alunos (em lote)</h1>
+    <h1 class="titulo">Cadastro de Alunos </h1>
 
     <form action="salvar_lote.php" method="POST">
 
