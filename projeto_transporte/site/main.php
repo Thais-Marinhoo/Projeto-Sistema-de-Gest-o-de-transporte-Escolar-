@@ -19,6 +19,8 @@ if(!isset($_SESSION['email'])){
 
     <!-- CSS da Home -->
     <link rel="stylesheet" href="mstyle.css">
+    <!-- Leaflet (mapa) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-sA+e2m6tYkG6kGk8p2bM8JQx0b0g1bQKpFf5pBf3wYk=" crossorigin=""/>
 </head>
 
 <body>
@@ -57,10 +59,26 @@ if(!isset($_SESSION['email'])){
     </div>
 
     <div class="mapa">
-       
+         <!-- Div do mapa (preenchida pelo Leaflet) -->
+         <div id="map"></div>
     </div>
 
 </div>
+
+<!-- Scripts do Leaflet NÂO SEI SE FUNCIONA -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j8kT7H2jvQv6k0v1s2mLZs8b6Z9jv+qj0f5mQ2M=" crossorigin=""></script>
+<script>
+    // Inicializa o mapa centrado em Crateús (CE) - coordenadas aproximadas
+    const map = L.map('map').setView([-5.1648, -40.3794], 13);
+
+    // Camada base OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Nota: por enquanto não adicionamos marcadores — apenas o mapa base
+</script>
 
 </body>
 </html>

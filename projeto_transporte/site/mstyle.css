@@ -100,3 +100,10 @@ logo-area{
     display:flex;
     align-items:center;
 }
+
+/* Estilo para o container do Leaflet */
+#map{
+    width:100%;
+    height:100%;
+    border-radius:10px;
+}
