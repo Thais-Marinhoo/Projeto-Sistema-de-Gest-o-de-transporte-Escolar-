@@ -1,4 +1,4 @@
-```php id="87tbj8"
+
 <?php
 session_start();
 
@@ -140,7 +140,7 @@ include '../conexao.php';
 
                 <?php
 
-                $sql = "SELECT * FROM alunos ORDER BY id DESC";
+                $sql = "SELECT * FROM aluno ORDER BY id_aluno DESC";
 
                 $resultado = mysqli_query($conexao, $sql);
 
@@ -227,4 +227,4 @@ include '../conexao.php';
 
 </body>
 </html>
-```
+

@@ -23,7 +23,16 @@ if(!isset($_SESSION['email'])){
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
+<script>
 
+document.querySelector("form")
+.addEventListener("submit", function(){
+
+    alert("FORMULÁRIO ENVIADO");
+
+});
+
+</script>
 <body>
 
 <?php include 'menu.php'; ?>
@@ -34,170 +43,152 @@ if(!isset($_SESSION['email'])){
         Cadastro de Alunos
     </h1>
 
-    <!-- TABELA -->
-    <table class="tabela-alunos" id="tabelaAlunos">
+    <!-- FORM COMEÇA -->
+    <form action="cadastroback.php" method="POST">
 
-        <thead>
+        <table class="tabela-alunos" id="tabelaAlunos">
 
-            <tr>
+            <thead>
 
-                <th>Nome</th>
+                <tr>
 
-                <th>Série</th>
+                    <th>Nome</th>
 
-                <th>Curso</th>
+                    <th>Série</th>
 
-                <th>Onde mora?</th>
+                    <th>Curso</th>
 
-                <th class="coluna-acoes">
-                    Ações
-                </th>
+                    <th>Onde mora?</th>
 
-            </tr>
+                    <th class="coluna-acoes">
+                        Ações
+                    </th>
 
-        </thead>
+                </tr>
 
-        <tbody id="corpoTabela">
+            </thead>
 
-            <!-- LINHA MODELO -->
-            <tr class="linha-modelo" style="display:none;">
+            <tbody id="corpoTabela">
 
-                <!-- NOME -->
-                <td>
-                    <input type="text" name="nome[]" required>
-                </td>
+                <!-- LINHA MODELO -->
+                <tr class="linha-modelo" style="display:none;">
 
-                <!-- SÉRIE -->
-                <td>
+                    <td>
+                        <input 
+                            type="text"
+                            name="nome[]"
+                            required
+                        >
+                    </td>
 
-                    <select name="serie[]">
+                    <td>
 
-                        <option value="1">1º</option>
-                        <option value="2">2º</option>
-                        <option value="3">3º</option>
+                        <select name="serie[]">
 
-                    </select>
+                            <option value="1º">1º</option>
+                            <option value="2º">2º</option>
+                            <option value="3º">3º</option>
 
-                </td>
+                        </select>
 
-                <!-- CURSO -->
-                <td>
+                    </td>
 
-                    <select name="curso[]">
+                    <td>
 
-                        <option value="Info">
-                            Informática
-                        </option>
+                        <select name="curso[]">
 
-                        <option value="DS">
-                            Desenvolvimento de Sistemas
-                        </option>
+                            <option value="Informática">
+                                Informática
+                            </option>
 
-                    </select>
+                            <option value="Desenvolvimento de Sistemas">
+                                Desenvolvimento de Sistemas
+                            </option>
 
-                </td>
+                        </select>
 
-                <!-- ENDEREÇO -->
-                <td>
-                    <input type="text" name="endereco[]" required>
-                </td>
+                    </td>
 
-                <!-- AÇÕES -->
-                <td class="coluna-acoes">
+                    <td>
 
-                    <div class="lista-acoes">
-
-                        <!-- VISUALIZAR -->
-                        <button 
-                            type="button"
-                            class="lista-btn-acao lista-btn-azul"
+                        <input 
+                            type="text"
+                            name="endereco[]"
+                            required
                         >
 
-                            <span class="material-icons">
-                                visibility
-                            </span>
+                    </td>
 
-                        </button>
+                    <td class="coluna-acoes">
 
-                        <!-- EDITAR -->
-                        <button 
-                            type="button"
-                            class="lista-btn-acao lista-btn-amarelo"
-                        >
+                        <div class="lista-acoes">
 
-                            <span class="material-icons">
-                                edit
-                            </span>
+                            <button 
+                                type="button"
+                                class="btn-remover"
+                            >
 
-                        </button>
+                                Remover
 
-                        <!-- REMOVER -->
-                        <button 
-                            type="button"
-                            class="btn-remover"
-                        >
+                            </button>
 
-                            Remover
+                        </div>
 
-                        </button>
+                    </td>
 
-                    </div>
+                </tr>
 
-                </td>
+            </tbody>
 
-            </tr>
+        </table>
 
-        </tbody>
+        <!-- BOTÕES -->
+        <div class="topo-acoes">
 
-    </table>
+            <div class="quantidade-box">
 
-    <!-- BOTÕES -->
-    <div class="topo-acoes">
+                <label>
+                    Quantidade
+                </label>
 
-        <!-- QUANTIDADE -->
-        <div class="quantidade-box">
+                <input 
+                    type="number"
+                    id="quantidadeLinhas"
+                    class="input-quantidade"
+                    min="1"
+                    value="1"
+                >
 
-            <label>
-                Quantidade
-            </label>
+            </div>
 
-            <input 
-                type="number"
-                id="quantidadeLinhas"
-                class="input-quantidade"
-                min="1"
-                value="1"
+            <!-- ADICIONAR -->
+            <button 
+                type="button"
+                id="btnAdd"
+                class="btn-add"
             >
+
+                + Adicionar linhas
+
+            </button>
+
+            <!-- SALVAR -->
+            <button 
+                type="submit"
+                class="btn-salvar"
+            >
+
+                Salvar todos
+
+            </button>
 
         </div>
 
-        <!-- ADICIONAR -->
-        <button 
-            type="button"
-            id="btnAdd"
-            class="btn-add"
-        >
-
-            + Adicionar linhas
-
-        </button>
-
-        <!-- SALVAR -->
-        <button 
-            type="submit"
-            class="btn-salvar"
-        >
-
-            Salvar todos
-
-        </button>
-
-    </div>
+    </form>
+    <!-- FORM TERMINA -->
 
 </div>
 
-<!-- JS -->
-<script src="cadastro.js"></script>
-
+<script src="cadastro.js?v=99"></script>
 </body>
 </html>

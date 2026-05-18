@@ -703,3 +703,122 @@ body{
 .btn-remover:hover{
     transform:translateY(-2px);
 }
+/* ======================================
+   AJUSTES CADASTRO ALUNOS
+====================================== */
+
+/* CABEÇALHO AZUL */
+
+.tabela-alunos thead{
+    background:linear-gradient(90deg,#0b2c5f,#001b3d);
+}
+
+.tabela-alunos th{
+    background:transparent;
+    color:#fff;
+    border:none;
+}
+
+/* AÇÕES */
+
+.coluna-acoes{
+    width:180px;
+}
+
+.lista-acoes{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* BOTÃO REMOVER */
+
+.btn-remover{
+    background:#dc3545;
+    color:#fff;
+    border:none;
+    height:48px;
+    min-width:120px;
+    padding:0 20px;
+    border-radius:12px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-remover:hover{
+    transform:translateY(-2px);
+    background:#c82333;
+}
+
+/* TOPO AÇÕES */
+
+.topo-acoes{
+    display:flex;
+    align-items:flex-end;
+    gap:15px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+
+/* QUANTIDADE */
+
+.quantidade-box{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.quantidade-box label{
+    font-size:14px;
+    font-weight:700;
+    color:#0b2c5f;
+}
+
+.input-quantidade{
+    width:120px;
+    height:55px;
+    border:1px solid #ddd;
+    border-radius:14px;
+    padding:0 16px;
+    font-size:20px;
+    font-weight:700;
+    background:#fff;
+    outline:none;
+}
+
+/* BOTÕES */
+
+.btn-add{
+    background:linear-gradient(90deg,#17a2b8,#138496);
+    color:#fff;
+    border:none;
+    height:55px;
+    padding:0 28px;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-add:hover{
+    transform:translateY(-2px);
+}
+
+.btn-salvar{
+    background:linear-gradient(90deg,#ffc107,#ffb300);
+    color:#0b1f3a;
+    border:none;
+    height:55px;
+    padding:0 28px;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-salvar:hover{
+    transform:translateY(-2px);
+}

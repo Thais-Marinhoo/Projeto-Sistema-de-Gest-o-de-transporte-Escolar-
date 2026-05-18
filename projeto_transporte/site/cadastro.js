@@ -1,106 +1,73 @@
-// =====================================
-// REFERÊNCIAS
-// =====================================
+// ESPERA A PÁGINA CARREGAR
+window.onload = function(){
 
-const linhaModelo =
-document.querySelector(".linha-modelo");
+    // PEGA ELEMENTOS
+    const linhaModelo =
+    document.querySelector(".linha-modelo");
 
-const corpoTabela =
-document.getElementById("corpoTabela");
+    const corpoTabela =
+    document.getElementById("corpoTabela");
 
+    const btnAdd =
+    document.getElementById("btnAdd");
 
-// =====================================
-// FUNÇÃO CRIAR LINHA
-// =====================================
+    // CRIAR LINHA
+    function criarLinha(){
 
-function criarLinha(){
+        let novaLinha =
+        linhaModelo.cloneNode(true);
 
-    let novaLinha =
-    linhaModelo.cloneNode(true);
+        // REMOVE CLASSE MODELO
+        novaLinha.classList.remove("linha-modelo");
 
-    // REMOVE classe modelo
-    novaLinha.classList.remove("linha-modelo");
+        // MOSTRA LINHA
+        novaLinha.style.display = "table-row";
 
-    // MOSTRA linha
-    novaLinha.style.display = "table-row";
+        // LIMPA INPUTS
+        novaLinha
+        .querySelectorAll("input")
+        .forEach(input => {
 
-    // LIMPA INPUTS
-    novaLinha
-    .querySelectorAll("input")
-    .forEach(input => {
+            input.value = "";
 
-        input.value = "";
+        });
+
+        // ADICIONA
+        corpoTabela.appendChild(novaLinha);
+
+    }
+
+    // PRIMEIRA LINHA
+    criarLinha();
+
+    // BOTÃO ADICIONAR
+    btnAdd.addEventListener("click", function(){
+
+        let quantidade =
+        parseInt(
+            document.getElementById("quantidadeLinhas").value
+        ) || 1;
+
+        for(let i = 0; i < quantidade; i++){
+
+            criarLinha();
+
+        }
 
     });
 
-    // RESETA SELECTS
-    novaLinha
-    .querySelectorAll("select")
-    .forEach(select => {
+    // REMOVER
+    document.addEventListener("click", function(e){
 
-        select.selectedIndex = 0;
+        let botao =
+        e.target.closest(".btn-remover");
+
+        if(botao){
+
+            botao.closest("tr").remove();
+
+        }
 
     });
 
-    // ADICIONA
-    corpoTabela.appendChild(novaLinha);
-
-}
-
-
-// =====================================
-// PRIMEIRA LINHA
-// =====================================
-
-criarLinha();
-
-
-// =====================================
-// ADICIONAR LINHAS
-// =====================================
-
-document
-.getElementById("btnAdd")
-.addEventListener("click", function(){
-
-    let quantidade =
-    parseInt(
-        document.getElementById("quantidadeLinhas").value
-    );
-
-    // SE INVÁLIDO
-    if(isNaN(quantidade) || quantidade < 1){
-
-        quantidade = 1;
-
-    }
-
-    // ADICIONA VÁRIAS
-    for(let i = 0; i < quantidade; i++){
-
-        criarLinha();
-
-    }
-
-});
-
-
-// =====================================
-// REMOVER
-// =====================================
-
-document.addEventListener("click", function(e){
-
-    let botao =
-    e.target.closest(".btn-remover");
-
-    if(botao){
-
-        let linha =
-        botao.closest("tr");
-
-        linha.remove();
-
-    }
-
-});
+};
